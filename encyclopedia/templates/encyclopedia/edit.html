@@ -1,0 +1,43 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block body %}
+    <style>
+        input[type="submit"] {
+            background-color: dodgerblue;
+            color: aliceblue;
+            border: 1px solid aqua;
+        }
+        .txt {
+            outline: none;
+            border: 1px solid cornsilk;
+        }
+        .txt:focus {
+            outline: 1px solid aqua;
+            border: 1px solid dodgerblue;
+        }
+    </style>
+    {% if error %}
+        {% if empty %}
+            <div class="alert alert-danger" role="alert">
+                You should input Title and content
+            </div>
+        {% else %}
+            <div class="alert alert-danger" role="alert">
+                This title is already in Your entries
+            </div>
+        {% endif %}
+    {% endif %}
+    <form action="{% url 'save_edit' %}" method="POST">
+        {% csrf_token %}
+        <div style="margin: 20px;"><label>Title: </label>
+        <input type="text" class="txt"   value="{{title}}" disabled autocomplete="off" style="width:400px;"></div>
+        <div>
+            <input type="hidden"  name='title'  value="{{title}}">
+            <textarea class="txt" name="content" autofocus autocomplete="off" rows="4" cols="5">{{content}}</textarea></div>
+        <div><input type="submit" value="Save Edits"></div>
+        </form>
+{% endblock %}
