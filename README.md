@@ -1,6 +1,6 @@
 # Wikipedia-like Online Encyclopedia
 ## Demonstration
-Watch the [YouTube video]((https://youtu.be/sJlBCyezEkk) to see the application in action.
+Watch the [YouTube video](https://youtu.be/sJlBCyezEkk) to see the application in action.
 
 ## Project Overview
 This project is a Django-based web application that emulates the core functionalities of Wikipedia, including viewing, searching, editing, and creating encyclopedia entries. It leverages Markdown for entry storage, allowing for a human-friendly editing and creation process, while dynamically converting Markdown to HTML for display.
